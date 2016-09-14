@@ -1,0 +1,48 @@
+#include "windows.h"
+
+#ifndef BUILD_NUMBER
+#define BUILD_NUMBER ""
+#endif
+
+#ifndef BUILD_ID
+#define BUILD_ID ""
+#endif
+
+#ifndef MERCURIAL_REVISION
+#define MERCURIAL_REVISION ""
+#endif
+
+#ifndef MERCURIAL_REVISION_NUMBER
+#define MERCURIAL_REVISION_NUMBER ""
+#endif
+
+
+#ifndef SISW_VERSION
+#define SISW_VERSION "BuildNumber=''BuildDate=''SourceRevision=''SourceRevisionNumber=''"
+#endif
+
+#define FILE_VERSION TEAMCENTER_MAJOR_VERSION, TEAMCENTER_MINOR_VERSION, TEAMCENTER_SUBMINOR_VERSION, TEAMCENTER_SUBSUBMINOR_VERSION
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION FILE_VERSION
+	PRODUCTVERSION FILE_VERSION
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "BuildDate", BUILD_ID
+			VALUE "BuildNumber", BUILD_NUMBER
+			VALUE "SourceRevision", MERCURIAL_REVISION
+			VALUE "SourceRevisionNumber", MERCURIAL_REVISION_NUMBER
+			VALUE "FileDescription", "Teamcenter\0"
+			VALUE "FileVersion", SISW_VERSION
+			VALUE "ProductVersion", SISW_VERSION
+			VALUE "LegalCopyright", "Copyright (C) 1974-2013\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1200
+	END
+END

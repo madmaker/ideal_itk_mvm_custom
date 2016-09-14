@@ -1,0 +1,4 @@
+#ifndef M9_IDEALPLM_CUSTOM_HXX_
+#define M9_IDEALPLM_CUSTOM_HXX_
+
+#endif /* M9_IDEALPLM_CUSTOM_HXX_ */
