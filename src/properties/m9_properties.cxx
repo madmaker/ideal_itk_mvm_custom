@@ -11,6 +11,7 @@
 #include "m9_map_source_to_part.hxx"
 #include "m9_get_document_type_value.hxx"
 #include "m9_get_mat_string_nx_value.hxx"
+#include "m9_get_TypeOfPart_EN.hxx"
 
 /**
  *
@@ -37,6 +38,9 @@ int m9_idealplm_custom_register_properties(int * decision, va_list args) {
 
 		erc = METHOD_register_prop_method("M9_KD", "m9_DocumentType",
 				PROP_ask_value_string_msg, m9_get_document_type_value, NULL, &meth);
+
+		erc = METHOD_register_prop_method("Part", "m9_TypeOfPart_EN",
+				PROP_ask_value_string_msg, m9_get_TypeOfPart_en, NULL, &meth);
 
 	} catch (...) {
 		return sisw::process_error(true, true, false);

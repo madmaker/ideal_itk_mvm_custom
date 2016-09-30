@@ -161,7 +161,7 @@ int m9_get_document_type_value(METHOD_message_t *mess, va_list args) {
 							result = (char*) MEM_alloc(
 									strlen("Тип не определен") + 1);
 							strcpy(result, "Тип не определен");
-						} else if (strcmp("Part", typeOfPart) == 0) {
+						} else if (strcmp("Деталь", typeOfPart) == 0) {
 							result = (char*) MEM_alloc(
 									strlen("") + 1);
 							strcpy(result, "");

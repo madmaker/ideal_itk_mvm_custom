@@ -58,7 +58,7 @@ int m9_map_source_to_part(METHOD_message_t *mess, va_list args) {
 
 		//std::cout << "--- Mapping source to a part" << std::endl;
 		erc = AOM_ask_value_string(mess->object_tag, "m9_TypeOfPart", &partType);
-		if(strcmp(partType, "Part")!=0){
+		if(strcmp(partType, "Деталь")!=0){
 			//std::cout << "Not applicable for this type of part" << std::endl;
 			return ITK_ok;
 		}

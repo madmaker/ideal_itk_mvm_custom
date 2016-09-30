@@ -59,12 +59,12 @@ int m9_get_mat_string_nx_value(METHOD_message_t *mess, va_list args) {
 		tag_t M9_CompanyPartRev_type_t = NULL_TAG;
 		tag_t CommercialPartRev_type_t = NULL_TAG;
 
-		// Данная программа должна отрабатывать только для M9_CompanyPart с m9_TypeOfPart=Part
+		// Данная программа должна отрабатывать только для M9_CompanyPart с m9_TypeOfPart=Деталь
 		tag_t item_t;
 		erc = ITEM_ask_item_of_rev(mess->object_tag, &item_t);
 		erc = AOM_ask_value_string(item_t, "m9_TypeOfPart",
 				&typeOfPart);
-		if(strcmp("Part", typeOfPart)){
+		if(strcmp("Деталь", typeOfPart)){
 			if(debug2) puts("--- Sorry, but I work with Part only");
 			MEM_free(typeOfPart);
 			return ITK_ok;
